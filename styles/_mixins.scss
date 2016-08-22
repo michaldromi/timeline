@@ -1,0 +1,74 @@
+@mixin breakpoint($point) {
+  @if $point == "large" {
+    @media (min-width: $large) { @content; }
+  }
+  @else if $point == "medium" {
+    @media (min-width: $medium) { @content; }
+  }
+  @else if $point == "small" {
+    @media (max-width: $small)  { @content; }
+  }
+}
+
+@mixin font-size($base-font){ 
+  font-size: (0.125 * $base-font) + rem;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;  
+}
+
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin abs-position ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  position: absolute;
+}
+
+
+@mixin transform($argumants) {
+   -webkit-transform: $arguments;
+  -moz-transform: $arguments;
+  -o-transform: $arguments;
+  -ms-transform: $arguments;
+  transform: $arguments;
+}
+
+@mixin transition($argumants) {
+    -webkit-transition: $argumants;
+  -moz-transition: $argumants;
+  -o-transition: $argumants;
+  transition: $argumants;
+}
+
+@mixin box-shadow($argumants) { 
+    -webkit-box-shadow: $argumants;
+    -moz-box-shadow: $argumants;
+    box-shadow: $argumants;
+}
+
+@mixin animation($argumants){
+    -webkit-animation:$arguments;
+    -moz-animation:$arguments;
+    -ms-animation:$arguments;
+    -o-animation:$arguments;
+    animation:$arguments;
+}
+
+@mixin animation-state($value){
+   -webkit-animation-play-state: $value;
+  -moz-animation-play-state: $value;
+  -ms-animation-play-state: $value;
+  -o-animation-play-state: $value;
+  animation-play-state: $value;
+}
+
